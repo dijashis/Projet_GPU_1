@@ -9,6 +9,9 @@
 #SBATCH --partition=short
 #SBATCH --array=0-5
 
+# Program configuration
+__author__='Gilles Siréta'
+
 echo 'Quality control and trimming'
 
 # Handling errors
@@ -52,7 +55,8 @@ printf '%s\n' "${tab_rev[@]}" >&2
 echo "Run the trimming with cutadapt tool..." >&2
 cutadapt -j ${SLURM_CPUS_ON_NODE} \
     -b file:"$HOME"/data/adapter_seqs.fa \
-	-o output_cut1.gz -p output_cut2.gz \
+        -o $(basename "${tab_fwd[$SLURM_ARRAY_TASK_ID]}" .fastq.gz)_cutadapter1.fastq.gz \
+        -p $(basename "${tab_rev[$SLURM_ARRAY_TASK_ID]}" .fastq.gz)_cutadapter2.fastq.gz \
     "${tab_fwd[$SLURM_ARRAY_TASK_ID]}" "${tab_rev[$SLURM_ARRAY_TASK_ID]}"
 
 

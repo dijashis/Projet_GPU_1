@@ -1,1 +1,2 @@
-# Projet_GPU_1
+# Projet_HPC
+

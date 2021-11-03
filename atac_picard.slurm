@@ -10,7 +10,7 @@
 #SBATCH --array=0-5
 
 # Program configuration
-__author__='Gilles Siréta'
+__author__='DIOP Khadidiatou'
 
 echo 'Removal of duplicates via Picard tools MarkDuplicates'
 

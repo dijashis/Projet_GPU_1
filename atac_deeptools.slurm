@@ -54,7 +54,20 @@ plotCorrelation -in covmat.npz \
         --whatToPlot heatmap \
         --plotTitle "This is a test" \
         -o testplot.png
-	
+plotCorrelation \
+    -in covmat.npz \
+    --corMethod spearman --skipZeros \
+    --plotTitle "Spearman Correlation of Read Counts" \
+    --whatToPlot heatmap --colorMap RdYlBu --plotNumbers \
+    -o "$OUTPUT"/heatmap_SpearmanCorr_readCounts.png   \
+    --outFileCorMatrix "$OUTPUT"/SpearmanCorr_readCounts.tab
+
+plotCoverage --bamfiles $tab \
+    --plotFile "$OUTPUT"/coverage \
+    --plotTitle "Coverage" \
+    --outRawCounts coverage.tab \
+    --ignoreDuplicates
+
 #Move results from scratch to user one's directory
 mv  "$SCRATCHDIR" "$OUTPUT"
 

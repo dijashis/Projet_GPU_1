@@ -29,7 +29,7 @@ module load gcc/8.1.0 bowtie2/2.3.4.3
 
 echo "Set up directories ..." >&2
 # Set up data directory
-DATA_DIR="/home/users/student10/data/ref"
+DATA_DIR="/home/users/student18/data/ref"
 # Set up the temporary directory
 SCRATCHDIR=/storage/scratch/"$USER"/"$SLURM_JOB_ID"
 # Set up output directory

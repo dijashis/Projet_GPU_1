@@ -9,7 +9,7 @@
 #SBATCH --partition=short
 
 # Program configuration
-__author__='Gilles Siréta'
+__author__='DIOP Khadidiatou'
 
 echo 'Indexation of GRCm38 genome for alignment'
 

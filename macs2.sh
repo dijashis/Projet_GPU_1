@@ -9,6 +9,8 @@
 #SBATCH --partition=short
 #SBATCH --array=0-5
 
+__author__= 'DIOP Khadidiatou'
+
 echo "Identification les sites d'accessibilité"
 
 # Handling errors
@@ -30,7 +32,7 @@ cd "$SCRATCHDIR"
 
 
 #Set up data directory
-DATA_DIR="/home/users/student05/results/atacseq/bam_net"
+DATA_DIR="/home/users/student18/results/atacseq/bam_net"
 #Run the program
 echo "Start on $SLURMD_NODENAME: "`date` >&2
 tab=($(ls "$DATA_DIR"/*/*mapped*.bam))

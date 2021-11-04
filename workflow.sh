@@ -23,7 +23,7 @@ echo "Launching Atac-seq Workflow"
 # first job - no dependencies
 # Initial QC
 jid1=$(sbatch --parsable scripts/atac_qc_init.slurm)
-echo "$jid1 : Initial Quality Control" sbatch "$jid1"
+echo "$jid1 : Initial Quality Control" 
 
 # Trimming ou cutadapt ?
 jid2=$(sbatch --parsable --dependency=afterok:$jid1 scripts/atac_trim.slurm)

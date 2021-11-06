@@ -10,14 +10,9 @@
 #SBATCH --partition=short
 #SBATCH --array=0-5
 
-# Program configuration
-__author__='Nadia Goué'
-__email__='brice.pertuisot@etu.uca.fr'
-__credits__=["Nadia Goué"]
-__license__='GPL3'
-__maintainer__='Nadia Goué'
-__status__='Development'
-__version__='0.0.1'
+
+__credits__=["brice.pertuisot"]
+
 
 echo 'Cutadapt_Trimming'
 
